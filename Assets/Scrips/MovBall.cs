@@ -6,9 +6,6 @@ public class MovBall : MonoBehaviour
 {
     public GameObject figuraPrefab;
     public Color colorFigura;
-
-    private float lastTapTime;
-    private Vector2 lastTapPosition;
     private Transform cositos;
     private Vector2 INT;
     private Vector2 ENDT;
@@ -64,7 +61,7 @@ public class MovBall : MonoBehaviour
                 ENDT = touch.position;
                 Vector2 swipeD = ENDT - INT;
 
-                float swipeM = swipeD.magnitude;   
+                float swipeM = swipeD.magnitude;    
             }
         }
 
@@ -82,6 +79,5 @@ public class MovBall : MonoBehaviour
     {
         GameObject Ball = Instantiate(figuraPrefab, posicion, Quaternion.identity);
         array.Add(Ball);
-        Debug.Log("xd");
     }
 }
