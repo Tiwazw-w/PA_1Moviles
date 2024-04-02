@@ -18,7 +18,6 @@ public class MovBall : MonoBehaviour
 
     void Update()
     {
-
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -29,26 +28,26 @@ public class MovBall : MonoBehaviour
 
             if (touch.phase == TouchPhase.Began)
             {
-                INT = touch.position;
-                RaycastHit2D hit = Physics2D.Raycast(tapPosition, Vector2.zero);
+                //INT = touch.position;
+                //RaycastHit2D hit = Physics2D.Raycast(tapPosition, Vector2.zero);
 
                 if (touch.tapCount == 1)
                 {
-                    if (hit.collider != null)
-                    {
-                        cositos = hit.collider.transform;
-                    }
-                    else
-                    {
-                        Debug.Log("Aea manito");
-                        CrearFigura(tapPosition);
-                    }
+                    Debug.Log("Aea manito");
+                    CrearFigura(tapPosition);
+                    //if (hit.collider == null)
+                    //{
+                    //    cositos = hit.collider.transform;
+                    //}
+                    //else
+                    //{
+                    //}
                 }
-                else if (touch.tapCount == 2 && hit.collider != null)
-                {
-                    Debug.Log(hit.collider.gameObject);
-                    Destroy(hit.collider.gameObject);
-                }
+                //else if (touch.tapCount == 2 && hit.collider != null)
+                //{
+                //    Debug.Log(hit.collider.gameObject);
+                //    Destroy(hit.collider.gameObject);
+                //}
 
             }
 
@@ -65,18 +64,7 @@ public class MovBall : MonoBehaviour
                 ENDT = touch.position;
                 Vector2 swipeD = ENDT - INT;
 
-                float swipeM = swipeD.magnitude;
-                //        if (swipeM > 0.6f && array != null)
-                //        {
-                //            for (int i = 0; i < array.Count; i++)
-                //            {
-                //                Destroy(array[i]);
-
-                //            }
-                //            array.Clear();
-                //        }
-                //    }
-                //}      
+                float swipeM = swipeD.magnitude;   
             }
         }
 
